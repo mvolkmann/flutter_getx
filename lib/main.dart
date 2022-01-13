@@ -48,7 +48,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 10),
               ScoreEntry(),
               SizedBox(height: 10),
-              Obx(() => Text('Number of scores = ${gameCtrl.scores.length}')),
+              Obx(() => Text('Number of scores = ${gameCtrl.count}')),
               ScoreReport(),
             ],
           ),

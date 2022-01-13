@@ -1,12 +1,14 @@
 import 'package:get/get.dart';
 
 class PlayerController extends GetxController {
-  final name = 'Mark'.obs; // observable String
+  final _name = 'Mark'.obs; // observable String
 
-  void setName(String value) {
-    // name is an RxString.
-    // We need to add .value to set its value.
-    name.value = value;
+  // _name is an RxString.
+  // We need to add .value to get its value.
+  String get name => _name.value;
+
+  set name(String value) {
+    _name.value = value;
     update();
   }
 }
