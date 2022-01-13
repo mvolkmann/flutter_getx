@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'player_controller.dart';
 
+// This needs to be stateful in order
+// to hold a TextEditingController instance.
 class PlayerEntry extends StatefulWidget {
   const PlayerEntry({Key? key}) : super(key: key);
 
