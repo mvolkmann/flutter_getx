@@ -27,6 +27,8 @@ class _PlayerEntryState extends State<PlayerEntry> {
               hintText: 'player name',
               labelText: 'Player',
             ),
+            // playerCtrl.name is an RxString.
+            // We need to add .value to get its value.
             initialValue: playerCtrl.name.value,
             onChanged: (String name) {
               playerCtrl.setName(name);
