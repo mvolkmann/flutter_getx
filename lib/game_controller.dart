@@ -4,7 +4,7 @@ int sum(List<int> numbers) =>
     numbers.isEmpty ? 0 : numbers.reduce((acc, score) => acc + score);
 
 class GameController extends GetxController {
-  var scores = <int>[].obs; // observable List of int values
+  final scores = <int>[].obs; // observable List of int values
 
   void addScore(int score) {
     scores.add(score);

@@ -20,6 +20,8 @@ class _PlayerEntryState extends State<PlayerEntry> {
 
   @override
   void initState() {
+    // playerCtrl.name is an RxString.
+    // We need to add .value to get its value.
     tec.text = playerCtrl.name.value;
     super.initState();
   }
