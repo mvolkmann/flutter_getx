@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Register controllers with GetX so other widgets can find them.
-    final GameController ctrl = Get.put(GameController());
+    final GameController gameCtrl = Get.put(GameController());
     Get.put(PlayerController());
 
     return Scaffold(
@@ -48,7 +48,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 10),
               ScoreEntry(),
               SizedBox(height: 10),
-              Obx(() => Text('Number of scores = ${ctrl.scores.length}')),
+              Obx(() => Text('Number of scores = ${gameCtrl.scores.length}')),
               ScoreReport(),
             ],
           ),
