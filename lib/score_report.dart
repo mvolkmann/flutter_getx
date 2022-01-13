@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'game_controller.dart';
+import 'player_controller.dart';
 
 class ScoreReport extends StatelessWidget {
-  final GameController ctrl = Get.find();
+  final GameController gameCtrl = Get.find();
+  final PlayerController playerCtrl = Get.find();
 
   ScoreReport({Key? key}) : super(key: key);
 
@@ -12,8 +14,9 @@ class ScoreReport extends StatelessWidget {
     return Column(children: [
       // Widgets that need to update when controller data changes
       // need to be wrapped in Obx.
-      Obx(() => Text('Total is ${ctrl.total}')),
-      Obx(() => Text('Average is ${ctrl.average.toStringAsFixed(2)}')),
+      Obx(() => Text('Player is ${playerCtrl.name}')),
+      Obx(() => Text('Total is ${gameCtrl.total}')),
+      Obx(() => Text('Average is ${gameCtrl.average.toStringAsFixed(2)}')),
     ]);
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'game_controller.dart';
+import 'player_controller.dart';
+import 'player_entry.dart';
 import 'score_entry.dart';
 import 'score_report.dart';
 
@@ -28,8 +30,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Register GameController with GetX so other widgets can find it.
+    // Register controllers with GetX so other widgets can find them.
     final GameController ctrl = Get.put(GameController());
+    Get.put(PlayerController());
 
     return Scaffold(
       appBar: AppBar(
@@ -39,6 +42,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            PlayerEntry(),
             ScoreEntry(),
             ScoreReport(),
             Obx(() => Text('Number of scores = ${ctrl.scores.length}')),

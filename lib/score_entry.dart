@@ -10,7 +10,7 @@ class ScoreEntry extends StatefulWidget {
 }
 
 class _ScoreEntryState extends State<ScoreEntry> {
-  final GameController ctrl = Get.find();
+  final GameController gameCtrl = Get.find();
 
   final tec = TextEditingController();
 
@@ -29,6 +29,8 @@ class _ScoreEntryState extends State<ScoreEntry> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // This is necessary so onPressed can be updated
+            // when the text in the TextEditingController changes.
             ValueListenableBuilder<TextEditingValue>(
               valueListenable: tec,
               builder: (context, value, child) {
@@ -38,9 +40,10 @@ class _ScoreEntryState extends State<ScoreEntry> {
                 );
               },
             ),
+            SizedBox(width: 10),
             ElevatedButton(
               child: Text('Reset'),
-              onPressed: () => ctrl.clearScores(),
+              onPressed: () => gameCtrl.clearScores(),
             ),
           ],
         ),
@@ -50,7 +53,7 @@ class _ScoreEntryState extends State<ScoreEntry> {
 
   void save() {
     var score = int.parse(tec.text);
-    if (score != 0) ctrl.addScore(score);
+    if (score != 0) gameCtrl.addScore(score);
     tec.clear();
   }
 }
