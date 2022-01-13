@@ -4,8 +4,9 @@ import 'game_controller.dart';
 import 'player_controller.dart';
 
 class ScoreReport extends StatelessWidget {
-  final GameController gameCtrl = Get.find();
-  final PlayerController playerCtrl = Get.find();
+  //final GameController gameCtrl = Get.find();
+  final gameCtrl = Get.find<GameController>();
+  final playerCtrl = Get.find<PlayerController>();
 
   ScoreReport({Key? key}) : super(key: key);
 

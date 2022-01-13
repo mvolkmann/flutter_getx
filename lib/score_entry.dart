@@ -12,7 +12,7 @@ class ScoreEntry extends StatefulWidget {
 }
 
 class _ScoreEntryState extends State<ScoreEntry> {
-  final GameController gameCtrl = Get.find();
+  final gameCtrl = Get.find<GameController>();
 
   final tec = TextEditingController();
 
