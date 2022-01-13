@@ -10,6 +10,8 @@ class PlayerEntry extends StatefulWidget {
 }
 
 class _PlayerEntryState extends State<PlayerEntry> {
+  // How does Get.find get the correct controller?
+  // Is it based on the type of the left-hand side?
   final PlayerController playerCtrl = Get.find();
 
   final tec = TextEditingController();
