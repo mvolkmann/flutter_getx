@@ -15,6 +15,12 @@ class _PlayerEntryState extends State<PlayerEntry> {
   final tec = TextEditingController();
 
   @override
+  void initState() {
+    tec.text = playerCtrl.name.value;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [

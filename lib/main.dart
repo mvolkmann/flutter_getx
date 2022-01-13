@@ -39,14 +39,19 @@ class Home extends StatelessWidget {
         title: Text('GetX Demo'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            PlayerEntry(),
-            ScoreEntry(),
-            ScoreReport(),
-            Obx(() => Text('Number of scores = ${ctrl.scores.length}')),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              PlayerEntry(),
+              SizedBox(height: 10),
+              ScoreEntry(),
+              SizedBox(height: 10),
+              Obx(() => Text('Number of scores = ${ctrl.scores.length}')),
+              ScoreReport(),
+            ],
+          ),
         ),
       ),
     );
