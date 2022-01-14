@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Change MaterialApp to GetMaterialApp here to use features of GetX
     // not related to state management such as navigation.
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'GetX Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -50,6 +50,25 @@ class Home extends StatelessWidget {
               SizedBox(height: 10),
               Obx(() => Text('Number of scores = ${gameCtrl.count}')),
               ScoreReport(),
+              ElevatedButton(
+                child: Text('Show Dialog'),
+                onPressed: () {
+                  Get.defaultDialog(
+                    title: 'My Title',
+                    content: Text('My Content'),
+                  );
+                },
+              ),
+              ElevatedButton(
+                child: Text('Show Snackbar'),
+                onPressed: () {
+                  Get.snackbar(
+                    'My Title',
+                    'My Message',
+                    snackPosition: SnackPosition.BOTTOM,
+                  );
+                },
+              )
             ],
           ),
         ),
